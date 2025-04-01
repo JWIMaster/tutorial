@@ -1,0 +1,9 @@
+Package: dingus
+Name: tutorial
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Weird notification tweak
+Maintainer: JWI Master
+Author: JWI Master
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000), preferenceloader

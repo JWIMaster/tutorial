@@ -2,6 +2,7 @@
 @import QuartzCore;
 #import <spawn.h>
 
+
 @interface NCNotificationViewController : UIViewController
 @property (nonatomic, strong) UIView *ourView;
 @end
@@ -11,7 +12,7 @@ static BOOL testSwitchKey;
 //Preference code, don't understand it yet
 static void preferencesChanged() {
     NSUserDefaults *prefs = [[NSUserDefaults alloc] initWithSuiteName:@"com.dingus.TutorialPrefs"];
-    testSwitchKey = [prefs objectForKey:@"testSwitchKey"] ? [prefs boolForKey:@"testSwitchKey"] : YES;
+	testSwitchKey = [prefs objectForKey:@"testSwitchKey"] ? [prefs boolForKey:@"testSwitchKey"] : YES;
 }
 
 //Code that searches for a change in preference

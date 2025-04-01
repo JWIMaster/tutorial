@@ -14,8 +14,6 @@ static void preferencesChanged() {
     testSwitchKey = [prefs objectForKey:@"testSwitchKey"] ? [prefs boolForKey:@"testSwitchKey"] : YES;
 }
 
-
-
 //Code that searches for a change in preference
 %ctor {
     preferencesChanged();

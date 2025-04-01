@@ -33,7 +33,10 @@ static void preferencesChanged() {
 -(void)viewDidLoad {
 	%orig;
 	//Doesn't run if the switch is off
-	if (!testSwitchKey) return;
+	if (!testSwitchKey) {
+		return;
+	}
+	else {
 	//Initilise the property from last function
 	self.ourView = [[UIView alloc] init];
 	self.ourView.backgroundColor = [[UIColor clearColor] colorWithAlphaComponent:0.7];
@@ -44,6 +47,7 @@ static void preferencesChanged() {
 	self.ourView.layer.shadowRadius = 10;
 	self.ourView.layer.shadowOffset = CGSizeZero;
     [self.view insertSubview:self.ourView atIndex:0];
+	}
 }
 
 %end

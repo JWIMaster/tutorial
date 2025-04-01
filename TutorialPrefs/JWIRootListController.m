@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "JWIRootListController.h"
+#import <spawn.h>
+#import <rootless.h>
 
 @implementation JWIRootListController
 
@@ -11,4 +13,9 @@
 	return _specifiers;
 }
 
+- (void)respring {
+	pid_t pid;
+	const char* args[] = {"killall", "SpringBoard", NULL};
+	posix_spawn(&pid, ROOT_PATH("/usr/bin/killall"), NULL, NULL, (char* const*)args, NULL);
+}
 @end

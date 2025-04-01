@@ -16,11 +16,21 @@
 			<key>default</key>
 			<true/>
 			<key>defaults</key>
-			<string>dingus</string>
+			<string>com.dingus.TutorialPrefs</string>
 			<key>key</key>
 			<string>testSwitchKey</string>
 			<key>label</key>
 			<string>Enable Notification Glow</string>
+		</dict>
+		<dict>
+    		<key>cell</key>
+    		<string>PSButtonCell</string>
+   		 	<key>label</key>
+    	 	<string>Respring</string>
+   		 	<key>action</key>
+    	 	<string>respring</string>
+    	 	<key>defaults</key>
+    	 	<string>com.dingus.TutorialPrefs</string>
 		</dict>
 	</array>
 	<key>title</key>

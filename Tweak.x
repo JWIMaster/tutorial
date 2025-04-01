@@ -1,5 +1,6 @@
 @import UIKit;
 @import QuartzCore;
+#import <spawn.h>
 
 @interface NCNotificationViewController : UIViewController
 @property (nonatomic, strong) UIView *ourView;
@@ -7,11 +8,15 @@
 
 static BOOL testSwitchKey;
 
+//Preference code, don't understand it yet
 static void preferencesChanged() {
     NSUserDefaults *prefs = [[NSUserDefaults alloc] initWithSuiteName:@"com.dingus.TutorialPrefs"];
     testSwitchKey = [prefs objectForKey:@"testSwitchKey"] ? [prefs boolForKey:@"testSwitchKey"] : YES;
 }
 
+
+
+//Code that searches for a change in preference
 %ctor {
     preferencesChanged();
 }
@@ -28,6 +33,7 @@ static void preferencesChanged() {
 //Create notification glow and set colour and size
 -(void)viewDidLoad {
 	%orig;
+	//Doesn't run if the switch is off
 	if (!testSwitchKey) return;
 	//Initilise the property from last function
 	self.ourView = [[UIView alloc] init];

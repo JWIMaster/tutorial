@@ -5,7 +5,17 @@
 @property (nonatomic, strong) UIView *ourView;
 @end
 
-//static BOOL testSwitchKey;
+static BOOL testSwitchKey;
+
+static void preferencesChanged() {
+    NSUserDefaults *prefs = [[NSUserDefaults alloc] initWithSuiteName:@"com.dingus.TutorialPrefs"];
+    testSwitchKey = [prefs objectForKey:@"testSwitchKey"] ? [prefs boolForKey:@"testSwitchKey"] : YES;
+}
+
+%ctor {
+    preferencesChanged();
+}
+
 
 %hook NCNotificationViewController
 %property (nonatomic, strong) UIView *ourView;
@@ -18,6 +28,7 @@
 //Create notification glow and set colour and size
 -(void)viewDidLoad {
 	%orig;
+	if (!testSwitchKey) return;
 	//Initilise the property from last function
 	self.ourView = [[UIView alloc] init];
 	self.ourView.backgroundColor = [[UIColor clearColor] colorWithAlphaComponent:0.7];
@@ -29,6 +40,5 @@
 	self.ourView.layer.shadowOffset = CGSizeZero;
     [self.view insertSubview:self.ourView atIndex:0];
 }
-dingus
 
 %end

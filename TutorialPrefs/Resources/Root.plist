@@ -18,9 +18,9 @@
 			<key>defaults</key>
 			<string>dingus</string>
 			<key>key</key>
-			<string>AwesomeSwitch1</string>
+			<string>testSwitchKey</string>
 			<key>label</key>
-			<string>Awesome Switch 1</string>
+			<string>Enable Notification Glow</string>
 		</dict>
 	</array>
 	<key>title</key>
